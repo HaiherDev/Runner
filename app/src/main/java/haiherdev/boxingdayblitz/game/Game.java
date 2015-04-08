@@ -6,13 +6,15 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Point;
-import android.view.Display;
 import android.view.View;
+
+import java.util.ArrayList;
 
 import haiherdev.boxingdayblitz.R;
 import haiherdev.boxingdayblitz.activity.PlayActivity;
 import haiherdev.boxingdayblitz.manager.OptionsManager;
-import haiherdev.boxingdayblitz.object.Background;
+import haiherdev.boxingdayblitz.object.Background.Background;
+import haiherdev.boxingdayblitz.object.Background.Layer;
 
 /**
  * Created by David on 3/25/2015.
@@ -29,14 +31,24 @@ public class Game extends View {
         this.pActivity = (PlayActivity) context;
         this.oManager = oManager;
 
-        Resources res = getResources();
-        Bitmap bitmap = BitmapFactory.decodeResource(res, R.drawable.buildings);
-
-        this.background = new Background(bitmap, new Point (0, 0), size, 7);
-
+        initBackground(size);
         invalidate();
     }
 
+    private void initBackground (Point size) {
+        ArrayList<Layer> layers = new ArrayList<Layer>();
+        Resources res = getResources();
+
+        //buildings layer
+        layers.add(new Layer (BitmapFactory.decodeResource(res, R.drawable.buildings),
+                0, 0, size.x, size.y - 150, 2));
+
+        //road layer
+        layers.add(new Layer (BitmapFactory.decodeResource(res, R.drawable.road),
+                0, size.x-150, size.x, 150, 1));
+
+        this.background = new Background(layers);
+    }
 
     @Override
     public void onDraw (Canvas c) {
