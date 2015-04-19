@@ -5,6 +5,10 @@ package haiherdev.boxingdayblitz;
  */
 public class Global {
 
-    public static int playerSpeed = 0;
+    public static int playerSpeed = 14;
+
+    public static void updateSpeed (int newSpeed) {
+        playerSpeed = newSpeed;
+    }
 
 }
