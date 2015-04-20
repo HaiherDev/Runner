@@ -26,6 +26,12 @@ public class Game extends View {
     private PlayActivity pActivity;
     private Background background;
 
+
+    /*
+    testing
+     */
+
+
     public Game(Context context, OptionsManager oManager, Point size) {
         super(context);
 
