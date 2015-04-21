@@ -2,10 +2,8 @@ package haiherdev.boxingdayblitz.game;
 
 import android.content.Context;
 import android.content.res.Resources;
-import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Point;
 import android.view.View;
 
@@ -15,7 +13,9 @@ import haiherdev.boxingdayblitz.R;
 import haiherdev.boxingdayblitz.activity.PlayActivity;
 import haiherdev.boxingdayblitz.manager.OptionsManager;
 import haiherdev.boxingdayblitz.object.Background.Background;
+import haiherdev.boxingdayblitz.object.Background.BitmapLayer;
 import haiherdev.boxingdayblitz.object.Background.Layer;
+import haiherdev.boxingdayblitz.object.Background.ShapeLayer;
 
 /**
  * Created by David on 3/25/2015.
@@ -47,27 +47,28 @@ public class Game extends View {
         Resources res = getResources();
 
         //sky layer
-        layers.add(new Layer (BitmapFactory.decodeResource(res, R.drawable.sky1), 0, 0, size.x, size.y, 0));
+        layers.add(new ShapeLayer (res.getDrawable(R.drawable.sky),
+                0, 0, size.x, size.y));
 
         //buildings3 layer
-        layers.add(new Layer (BitmapFactory.decodeResource(res, R.drawable.buildings3),
-                0, (int) (size.y*0.1), size.x, (int) (size.y*0.8), 0.1));
+        layers.add(new BitmapLayer(BitmapFactory.decodeResource(res, R.drawable.buildings_silhouettes_1),
+                0, size.y*0.1, size.x, size.y*0.8, 0.1));
 
-        //buildings2 layer
-        layers.add(new Layer (BitmapFactory.decodeResource(res, R.drawable.buildings2),
-                0, (int) (size.y*0.1), size.x, (int) (size.y*0.8), 0.2));
-
-        //buildings1 layer
-        layers.add(new Layer (BitmapFactory.decodeResource(res, R.drawable.buildings1),
-                0, (int) (size.y*0.2), size.x, (int) (size.y*0.8), 0.3));
+//        //buildings2 layer
+//        layers.add(new BitmapLayer(BitmapFactory.decodeResource(res, R.drawable.buildings2),
+//                0, size.y*0.1, size.x, size.y*0.8, 0.2));
+//
+//        //buildings1 layer
+//        layers.add(new BitmapLayer(BitmapFactory.decodeResource(res, R.drawable.buildings1),
+//                0, size.y*0.2, size.x, size.y*0.8, 0.3));
 
         //fog layer
-        layers.add(new Layer (BitmapFactory.decodeResource(res, R.drawable.fog1),
-                0, (int) (size.y*0.5), size.x, (int) (size.y*0.35), 0));
+        layers.add(new ShapeLayer(res.getDrawable(R.drawable.fog),
+                0, size.y*0.5, size.x, size.y*0.35));
 
         //road layer
-        layers.add(new Layer (BitmapFactory.decodeResource(res, R.drawable.road2),
-                0, (int) (size.y - size.y*0.15), size.x, (int) (size.y*0.15), 1.3));
+        layers.add(new ShapeLayer(res.getDrawable(R.drawable.road),
+                0, size.y - size.y*0.15, size.x, size.y*0.15));
 
         this.background = new Background(layers);
     }
