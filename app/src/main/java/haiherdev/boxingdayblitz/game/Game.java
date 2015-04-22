@@ -52,7 +52,7 @@ public class Game extends View {
 
         //buildings3 layer
         layers.add(new BitmapLayer(BitmapFactory.decodeResource(res, R.drawable.buildings_silhouettes_1),
-                0, size.y*0.1, size.x, size.y*0.8, 0.1));
+                0, size.y*0.1, size.x, size.y*0.85, 0.1));
 
 //        //buildings2 layer
 //        layers.add(new BitmapLayer(BitmapFactory.decodeResource(res, R.drawable.buildings2),
@@ -62,13 +62,13 @@ public class Game extends View {
 //        layers.add(new BitmapLayer(BitmapFactory.decodeResource(res, R.drawable.buildings1),
 //                0, size.y*0.2, size.x, size.y*0.8, 0.3));
 
-        //fog layer
-        layers.add(new ShapeLayer(res.getDrawable(R.drawable.fog),
-                0, size.y*0.5, size.x, size.y*0.35));
-
         //road layer
         layers.add(new ShapeLayer(res.getDrawable(R.drawable.road),
-                0, size.y - size.y*0.15, size.x, size.y*0.15));
+                0, size.y*0.85, size.x, size.y*0.15));
+
+        //fog layer
+        layers.add(new ShapeLayer(res.getDrawable(R.drawable.fog),
+                0, size.y*0.6, size.x, size.y*0.25));
 
         this.background = new Background(layers);
     }

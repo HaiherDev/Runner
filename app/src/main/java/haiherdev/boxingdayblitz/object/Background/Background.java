@@ -1,18 +1,10 @@
 package haiherdev.boxingdayblitz.object.Background;
 
-import android.content.Context;
-import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Point;
-import android.graphics.Rect;
-import android.view.Display;
 import android.view.MotionEvent;
-import android.view.WindowManager;
 
 import java.util.ArrayList;
 
-import haiherdev.boxingdayblitz.Global;
 import haiherdev.boxingdayblitz.object.GameObject;
 
 /**

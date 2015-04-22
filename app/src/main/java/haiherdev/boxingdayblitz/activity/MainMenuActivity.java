@@ -17,7 +17,14 @@ public class MainMenuActivity extends Activity {
         setContentView(R.layout.activity_main_menu);
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        System.exit(0);
+    }
+
     /* Called when the user clicks the options button */
+
     public void optionsClick (View view) {
         Intent intent = new Intent(this, OptionsMenuActivity.class);
         startActivity(intent);
