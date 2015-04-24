@@ -1,0 +1,29 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background_1"
+    android:id="@+id/main_menu_layout"
+    android:clickable="false">
+
+        <Button android:id="@+id/play_button"
+            style="@style/Menu_Button1"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_width="200dp"
+            android:layout_height="80dp"
+            android:text="@string/title_activity_play"
+            android:onClick="playClick" />
+
+        <Button android:id="@+id/options_button"
+            style="@style/Menu_Button1"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/play_button"
+            android:layout_width="200dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/title_activity_options_menu"
+            android:onClick="optionsClick" />
+
+</RelativeLayout>
+

@@ -19,6 +19,9 @@
     <!-- Menu Button Theme 1 -->
     <style name="Menu_Button1" parent="android:Widget">
         <item name="android:background">@drawable/button</item>
+        <item name="android:textColor">#FFFFFFFF</item>
+        <item name="android:textSize">30dp</item>
+        <item name="android:textAllCaps">true</item>
     </style>
 
 </resources>
